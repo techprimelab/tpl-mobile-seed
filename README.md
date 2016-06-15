@@ -9,4 +9,5 @@ step2 : npm start
 follow this angular best practices <br />
 https://angular.io/styleguide
 
-
+------------------------------------------------------------------------------------------------------------------------------------
+If you are using WebStorm you don't need a server. Just right click index.html and select "Run index.html". It will then start its internal web server and load the app.
