@@ -1,9 +1,9 @@
 # tpl-mobile-seed
 
-To install dependecies<br />
+To install dependecies <br />
 step1 : npm install
 
-Run project<br />
+Run project <br />
 step2 : npm start
 
 
