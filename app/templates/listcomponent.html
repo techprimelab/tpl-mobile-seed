@@ -1,0 +1,14 @@
+<h1>My component {{emp.name}}{{emp|json}}</h1>
+{{fullname}}
+<div (click)="select()">select me</div>
+<form [ngFormModel]="form">
+    <input required type=”text” ngControl="username" />
+
+    <input type="submit" value="submit">
+    <div *ngIf="!username.valid">
+        Enter username
+    </div>
+</form>
+
+
+<p [ngStyle]="{color:'red'}">roshan </p>
