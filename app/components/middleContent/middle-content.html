@@ -1,0 +1,48 @@
+<!--<p>Last Name:<span [class.highlight] ="inputLastName.value ==='yes'"> {{ lastName }} </span> </p>-->
+<!--<p>Type yes to highlight Last Name :</p>-->
+<!--<input type="text" #inputLastName (keyup)="0">-->
+<div class="col-md-8 col-md-offset-2">
+    <tabset>
+        <tab *ngFor="let tabz of tabs" [heading]="tabz.title" >
+            {{tabz?.content}}
+        </tab>
+    </tabset>
+</div>
+<div class="clearfix">&nbsp;</div>
+<div class="clearfix">&nbsp;</div>
+<div class="col-md-8 col-md-offset-2">
+    <accordion [closeOthers]="oneAtATime">
+        <accordion-group heading="Static Header, initially expanded"
+                         [isOpen]="status.isFirstOpen"
+                         [isDisabled]="status.isFirstDisabled">
+            This content is straight in the template.
+        </accordion-group>
+        <accordion-group *ngFor="let group of groups" [heading]="group.title">
+            {{ group?.content }}
+        </accordion-group>
+        <accordion-group heading="Dynamic Body Content">
+            <p>The body of the accordion group grows to fit the contents</p>
+            <button type="button" class="btn btn-primary btn-sm" (click)="addItem()">Add Item</button>
+            <div *ngFor="let item of items">{{item}}</div>
+        </accordion-group>
+        <accordion-group let group [isOpen]="status.open">
+            <div accordion-heading>
+                I can have markup, too!
+                <i class="pull-right glyphicon"
+                   [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+            </div>
+            This is just some content to illustrate fancy headings.
+        </accordion-group>
+    </accordion>
+</div>
+<div class="clearfix">&nbsp;</div>
+<div class="clearfix">&nbsp;</div>
+<div class="col-md-8 col-md-offset-2">
+    <alert *ngFor="let alert of alerts;let i = index" [type]="alert.type" dismissible="true" (close)="closeAlert(i)">
+        {{ alert?.msg }}
+    </alert>
+
+    <alert dismissOnTimeout="3000">This alert will dismiss in 3s</alert>
+
+    <button type="button" class='btn btn-primary' (click)="addAlert()">Add Alert</button>
+</div>

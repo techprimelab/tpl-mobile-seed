@@ -1,6 +1,16 @@
 import { Component } from '@angular/core';
-@Component({
-    selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
-})
+
+import {middleContentComponent} from "./components/middleContent/middleContent.component";
+import {headerComponent} from "./components/header/header.component";
+import {footerComponent} from "./components/footer/footer.component";
+@Component(
+    {
+        selector: 'my-app',
+        template: `<header></header>
+                   <middle-content></middle-content>
+                   <footer></footer>
+                   `,
+        directives : [headerComponent, footerComponent, middleContentComponent]
+    }
+)
 export class AppComponent { }
