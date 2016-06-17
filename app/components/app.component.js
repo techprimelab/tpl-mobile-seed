@@ -1,3 +1,4 @@
+///<reference path="../../node_modules/rxjs/add/operator/do.d.ts"/>
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -8,14 +9,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/// <reference path="../../node_modules/typescript/lib/jquery.d.ts"/>
 var core_1 = require('@angular/core');
 var app_myservice_1 = require('../services/app.myservice'); //importing a module
 var app_mycomponent_1 = require('./app.mycomponent');
+var initCaps_pipe_1 = require('../filters/initCaps.pipe');
+var http_1 = require("@angular/http");
+var User = (function () {
+    function User(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    return User;
+}());
+exports.User = User;
 //component metadata -describes component
 var AppComponent = (function () {
-    function AppComponent(_myservice) {
+    function AppComponent(_myservice, _http) {
         this._myservice = _myservice;
+        this._http = _http;
         //define services here in constructor
         this.amount = 67;
         this.collegeName = "sdfdf";
@@ -37,6 +48,11 @@ var AppComponent = (function () {
         this.color = "red";
         this.items = 10;
     }
+    AppComponent.prototype.getUsers = function () {
+        this._http.get("users.json")
+            .map(function (response) { return response.json().data; })
+            .catch();
+    };
     AppComponent.prototype.clicked = function (event) {
         console.log("click");
         console.log(this._myservice.getTotal());
@@ -52,6 +68,11 @@ var AppComponent = (function () {
     AppComponent.prototype.changed = function (message) {
         console.log(message);
     };
+    AppComponent.prototype.check = function (event) {
+        var _this = this;
+        this.getUsers().
+            subscribe(function (users) { return _this.users = users; });
+    };
     __decorate([
         core_1.ViewChild(app_mycomponent_1.MyComponent), 
         __metadata('design:type', app_mycomponent_1.MyComponent)
@@ -60,10 +81,11 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             templateUrl: '../app/templates/component.html',
-            providers: [app_myservice_1.MyService],
-            directives: [app_mycomponent_1.MyComponent] //tells that  this component has some child components
+            providers: [app_myservice_1.MyService, http_1.HTTP_PROVIDERS],
+            directives: [app_mycomponent_1.MyComponent],
+            pipes: [initCaps_pipe_1.samplePipe]
         }), 
-        __metadata('design:paramtypes', [app_myservice_1.MyService])
+        __metadata('design:paramtypes', [app_myservice_1.MyService, http_1.Http])
     ], AppComponent);
     return AppComponent;
 }());

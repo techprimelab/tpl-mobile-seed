@@ -1,6 +1,6 @@
 <h1>My First angular  2 App</h1>
 <ul *ngFor="let s of student,let i=index">
-   <li>{{i}}Name:{{s.name}},Height:{{s.height| number :'1.1-3'}},fees:{{s.fees|currency}}</li>
+   <li>{{i}}Name:{{s.name | samplePipe:10}},Height:{{s.height| number :'1.1-3'}},fees:{{s.fees|currency:'USD':true:'1.2-2'}}</li>
 </ul>
 <div *ngIf="student.length">
     you have {{student.length}}stud
@@ -19,3 +19,15 @@ name is {{collegeName}}
 <div [style.visibility]="student.length? 'visible' :'hidden'">its me </div>
 <img [src]="link1" height="200" width="200"/>
 <my-comp [fullname]="karwalkar" (changed)="changed($event)"></my-comp>
+
+<button class="btn-primary" (click)="check($event)">jQuery check</button>
+<button class="btn-danger" (click)="check($event)">jQuery check</button>
+<button class="btn-info" (click)="check($event)">jQuery check</button>
+<p id="text1"></p>
+<ul>
+    <li *ngFor="let u of users">
+        {{u.name}}
+    </li>
+</ul>
+
+
