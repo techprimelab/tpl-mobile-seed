@@ -1,0 +1,65 @@
+<div>
+    <button type="submit" (click)="withfacebook()">Sign with facebook</button>
+</div>
+
+<div>
+    <button type="submit" (click)="withgoogle()">Sign with Google +</button>
+</div>
+
+<div>
+    <form (submit)="formdata(items)">
+
+        <label>FirstName</label>
+        <input type="text" [(ngModel)]="items.firstName" placeholder="FirstName"><br>
+        <div>
+            <p>
+                please enter name
+            </p>
+        </div>
+        <label>LastName</label>
+        <input type="text" [(ngModel)]="items.lastName" placeholder="LastName"><br>
+        <div>
+            <p>
+                please enter lastname
+            </p>
+        </div>
+        <label>Email</label>
+        <input type="text" [(ngModel)]="items.Email" placeholder="Mobile number or email add"><br>
+        <div>
+            <p>
+                please enter email
+            </p>
+        </div>
+
+        <label>Re-enter Email</label>
+        <input type="text" [(ngModel)]="items.conformEmail" placeholder="Re-enter member or email add"><br>
+
+        <div>
+            <p>
+                please Conform email
+            </p>
+        </div>
+
+        <label>Mobilenumber</label>
+        <input type="text" [(ngModel)]="items.mobileNumber" placeholder="Mobilenumber"><br>
+
+        <div>
+            <p>
+                please enter mobilenumber
+            </p>
+
+        </div>
+
+        <label>Password</label>
+        <input type="password" [(ngModel)]="items.userPassword" placeholder="New Password"><br>
+
+        <div>
+            <p>
+                please enter password
+            </p>
+        </div>
+
+        <button type="submit" value="Create an account">Create an account</button>
+
+    </form>
+</div>
