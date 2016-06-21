@@ -1,6 +1,14 @@
 import { Component } from '@angular/core';
+import {loginComponent} from "./components/login/login.component";
+import {dashboardComponent} from "./components/dashboard/dashboard.component";
+import {loadingComponent} from "./components/loading/loading.component";
+
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    //template:'<dashboard></dashboard>',
+    template:'<login></login>',
+    directives: [dashboardComponent, loginComponent,loadingComponent]
 })
-export class AppComponent { }
+export class AppComponent {
+
+}
