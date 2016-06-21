@@ -5,6 +5,7 @@ import {MyService } from '../services/app.myservice';//importing a module
 import {MyComponent} from './app.mycomponent';
 import {samplePipe} from '../filters/initCaps.pipe';
 import {Http} from "@angular/http";
+
 import 'rxjs/Rx';
 
 export class User{
@@ -34,12 +35,7 @@ export class AppComponent {//to make it importable we must give export keyword
         private _myservice:MyService){
             this.items=10;
     }
-/*
-   getUsers(){
-         this._http.get("users.json")
-             .map((response :Response)=><User[]>response.json().data)
-             .catch()
-    }*/
+
 
 
      collegeName:string="sdfdf";
@@ -77,18 +73,31 @@ link1="https://www.gstatic.com/webp/gallery3/2.png";
         console.log(message);
     }
     getData:string;
+    users1:any;
     check(event){
 
-        this._myservice.getUser1()
-           /* .subscribe(
-              data=> this.getData=JSON.stringify(data),
+      this._myservice.getUser1()
+           .subscribe(
+              data=>{
+                  
+                  this.users1=data;
+              console.log(this.users1);
+              },
                 error=>alert(error),
                 ()=>console.log("finish")
-            );*/
-  /*      this.getUsers().
-            subscribe(
-            users=> this.users=users)
-  */  }
+            );
+    }
+    testpost(event){
+
+        this._myservice.testJson()
+            .subscribe(
+                data=> this.getData=JSON.parse(data),
+                error=>alert(error),
+                ()=> {
+                    console.log(this.getData);
+                }
+            );
+    }
 }
 
 

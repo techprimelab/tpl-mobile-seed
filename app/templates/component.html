@@ -20,8 +20,8 @@ name is {{collegeName}}
 <img [src]="link1" height="200" width="200"/>
 <my-comp [fullname]="karwalkar" (changed)="changed($event)"></my-comp>
 
-<button class="btn-primary" (click)="check($event)">jQuery check</button>
-<button class="btn-danger" (click)="check($event)">jQuery check</button>
+<button class="btn-primary" (click)="check($event)">get api</button>
+<button class="btn-danger" (click)="testpost($event)">post api</button>
 <button class="btn-info" (click)="check($event)">jQuery check</button>
 <p id="text1"></p>
 <ul>
@@ -30,4 +30,9 @@ name is {{collegeName}}
     </li>
 </ul>
 
+<ul>
+    <li *ngFor="let u of users1">
+    {{u.id}}
+    </li>
+</ul>
 
