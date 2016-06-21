@@ -24,8 +24,9 @@ export class RegistrationService {
             .map(res => res.json())
             .catch(this.handleError)
     }
+
     handleError(res:Response) {
         console.log(res);
-        return Observable.throw(error.json().error || 'server error');
+        return Observable.throw(res.json().error || 'server error');
     }
 }
