@@ -1,0 +1,64 @@
+<div>
+    <button type="submit" (click)="withfacebook()">Sign with facebook</button>
+</div>
+
+<div>
+    <button type="submit" (click)="withgoogle()">Sign with Google +</button>
+</div>
+
+<div>
+    <form [ngFormModel]="userForm" (submit)="formdata(items)">
+
+        <label>FirstName</label>
+        <input type="text" [(ngModel)]="items.firstName" ngControl="firstname" placeholder="FirstName"><br>
+
+        <div *ngIf="!firstname.valid">
+            <p>
+                please enter name
+            </p>
+        </div>
+
+        <label>LastName</label>
+        <input type="text" [(ngModel)]="items.lastName" ngControl="lastname"  placeholder="LastName" required><br>
+        <div *ngIf="!lastname.valid">
+            <p>
+                please enter lastname
+            </p>
+        </div>
+
+        <label>Email</label>
+        <input type="text" [(ngModel)]="items._Email" ngControl="email" placeholder="Mobile number or email add" required><br>
+        <div *ngIf="!email.valid">
+            <p>
+                please enter email
+            </p>
+        </div>
+
+        <label>Re-enter Email</label>
+        <input type="text" [(ngModel)]="items.conformEmail" ngControl="conformemail" placeholder="Re-enter member or email add" required><br>
+        <div *ngIf="!conformemail.valid">
+            <p>
+                please Conform email
+            </p>
+        </div>
+
+        <label>Mobilenumber</label>
+        <input type="text" [(ngModel)]="items.mobileNumber" ngControl="mobilenumber" placeholder="Mobilenumber" required><br>
+        <div *ngIf="!mobilenumber.valid">
+            <p>
+                please enter mobilenumber
+            </p>
+        </div>
+
+        <label>Password</label>
+        <input type="password" [(ngModel)]="items.userPassword"  ngControl="password" placeholder="New Password" required><br>
+        <div *ngIf="!password.valid">
+            <p>
+                please enter password
+            </p>
+        </div>
+
+        <button type="submit" [disabled]="!userForm.valid">Create an account</button>
+
+    </form>
+</div>
