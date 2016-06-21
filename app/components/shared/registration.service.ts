@@ -28,5 +28,4 @@ export class RegistrationService {
         console.log(res);
         return Observable.throw(error.json().error || 'server error');
     }
-
 }

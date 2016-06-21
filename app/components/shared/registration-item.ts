@@ -3,9 +3,9 @@
  */
 export class RegistrationItem {
 
-    firstName:string="";
+    firstName:string;
     lastName:string;
-    Email:string;
+    _Email:string;
     conformEmail:any;
     dateBirth:any;
     mobileNumber:any;
