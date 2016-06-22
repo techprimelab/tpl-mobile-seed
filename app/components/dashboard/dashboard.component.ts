@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'dashboard',
-    templateUrl: '../app/components/dashboard/dashboard.html',
-    styleUrls: ['../app/components/dashboard/dashboard.scss']
+    templateUrl: '../app/components/dashboard/dashboard.component.html',
+    styleUrls: ['../app/components/dashboard/dashboard.component.scss']
 })
 export class dashboardComponent {
     clicked(event) {
