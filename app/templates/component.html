@@ -36,3 +36,11 @@ name is {{collegeName}}
     </li>
 </ul>
 
+<p>{{promise|async}}</p>
+<sample-comp></sample-comp>
+
+<a [routerLink]="['/']">Home</a>
+<a [routerLink]="['/sample']">sample</a>
+<div class="outer-outlet">
+    <router-outlet></router-outlet>
+</div>

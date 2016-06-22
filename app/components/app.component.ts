@@ -28,7 +28,7 @@ export class AppComponent {//to make it importable we must give export keyword
     child1:MyComponent;
 
     users :User[];
-
+    promise:Promise<string>;
     private items:number;
     constructor(
         private _http:Http,
@@ -36,6 +36,15 @@ export class AppComponent {//to make it importable we must give export keyword
             this.items=10;
     }
 
+    ngOnInit(){
+        this.promise=new Promise(function(resolve,reject){
+            setTimeout(function(){
+
+                    resolve("I am hungry");
+
+                },3000);
+        } );
+    }
 
 
      collegeName:string="sdfdf";
@@ -100,4 +109,7 @@ link1="https://www.gstatic.com/webp/gallery3/2.png";
     }
 }
 
+/*@RouteConfig({
+    [{path:'/sample',name:'sample-comp',component:SampleComponent}]
+});*/
 
