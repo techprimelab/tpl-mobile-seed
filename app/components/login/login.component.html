@@ -1,26 +1,41 @@
 <div class="col-xs-12">
-    <form role="form" id="loginForm">
+    <form role="form" [ngFormModel]="loginForm" (submit)="onLoginSubmit(userName,password)" id="loginForm">
         <div>
             <button type="submit" (click)="withfacebook()" class="btn btn-primary btn-block">Sign with facebook</button>
         </div>
         <div class="clearfix">&nbsp;</div>
         <div>
-            <button type="submit" (click)="withgoogle()" class="btn btn-primary btn-block" >Sign with Google +</button>
+            <button type="submit" (click)="withgoogle()" class="btn btn-primary btn-block">Sign with Google +</button>
         </div>
         <div class="clearfix">&nbsp;</div>
         <div class="form-group">
             <label for="email">Email address:</label>
-            <input type="email" class="form-control" id="email">
+            <input type="email" [(ngModel)]="userName" ngControl="username" class="form-control" id="email" required>
             <control-messages control="email"></control-messages>
+        </div>
+        <div *ngIf="!username.valid">
+            <p>
+                please enter username
+            </p>
         </div>
         <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" class="form-control" id="password" >
+            <input type="password" [(ngModel)]="password" ngControl="userpassword" class="form-control" id="password"
+                   required>
             <control-messages control="password"></control-messages>
         </div>
+        <div *ngIf="!userpassword.valid">
+            <p>
+                please enter password
+            </p>
+        </div>
         <div class="row">
-            <div class="col-xs-6"><button type="submit" class="btn btn-primary btn-block" >Sign In</button></div>
-            <div class="col-xs-6"><button  type="submit" (click)="onSignUp()" class="btn btn-primary btn-block" >Sign Up</button></div>
+            <div class="col-xs-6">
+                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            </div>
+            <div class="col-xs-6">
+                <button type="submit" (click)="onSignUp()" class="btn btn-primary btn-block">Sign Up</button>
+            </div>
         </div>
         <div class="text-center forgot-password">
             <a href="#">Forgot Your Password</a>

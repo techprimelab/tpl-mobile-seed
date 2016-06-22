@@ -5,17 +5,20 @@ import {Registration} from "./components/registration/registration.component";
 
 @Component({
     selector: 'my-app',
-    template: `<login></login><router-outlet></router-outlet><form-registration></form-registration>`,
-    directives: [ROUTER_DIRECTIVES,LoginComponent]
+    template: `
+     <div>
+     <a [routerLink]="['/']"></a>
+     <router-outlet></router-outlet>
+     </div>`,
+    directives: [ROUTER_DIRECTIVES]
 })
 
 @Routes([
-
-    { path: '/login', component: LoginComponent},
+    {path: '/', component: LoginComponent},
+    {path: '/login', component: LoginComponent},
     {path: '/registration', component: Registration}
 ])
 
 export class AppComponent {
-
-
 }
+

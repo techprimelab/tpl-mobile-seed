@@ -5,11 +5,12 @@ import {Component} from '@angular/core';
 import {RegistrationService} from "../shared/registration.service";
 import {RegistrationItem} from "../shared/registration-item";
 import {ControlGroup,Control,FormBuilder, Validators } from '@angular/common';
-import {Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {Router, ROUTER_DIRECTIVES} from '@angular/router';
 import {CustomValidators} from '../registration/CustomValidators';
 
 @Component({
     selector: 'form-registration',
+    directives:[ROUTER_DIRECTIVES],
     templateUrl: '../app/components/registration/registration.component.html',
     styleUrls: ['../app/components/registration/registration.component.scss'],
     providers: [RegistrationService, ROUTER_DIRECTIVES]
@@ -17,8 +18,6 @@ import {CustomValidators} from '../registration/CustomValidators';
 
 export class Registration {
 
-
-    private router: Router;
     firstname:Control;
     lastname:Control;
     email:Control;
@@ -55,8 +54,5 @@ export class Registration {
             .subscribe(res => {
                 console.log(JSON.stringify(res));
             });
-        console.log("register", this.items.firstName);
     }
-    
-
 }
