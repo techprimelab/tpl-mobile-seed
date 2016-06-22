@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
     templateUrl: '../app/components/footer/footer.component.html',
     styleUrls: ['../app/components/footer/footer.component.scss']
 })
-export class footerComponent {
+export class FooterComponent {
     firstName = "Prajakta";
 }

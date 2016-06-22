@@ -9,7 +9,7 @@ import {Registration} from "../registration/registration.component";
     styleUrls: ['../app/components/login/login.component.scss']
 })
 
-export class loginComponent {
+export class LoginComponent {
 
     constructor(private _router: Router){
 

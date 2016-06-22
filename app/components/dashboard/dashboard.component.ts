@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
     templateUrl: '../app/components/dashboard/dashboard.component.html',
     styleUrls: ['../app/components/dashboard/dashboard.component.scss']
 })
-export class dashboardComponent {
+export class DashboardComponent {
     clicked(event) {
         event.preventDefault();
         $("#wrapper").toggleClass("active");

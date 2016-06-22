@@ -9,19 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var FooterComponent = (function () {
-    function FooterComponent() {
-        this.firstName = "Prajakta";
+var ForgotPasswordComponent = (function () {
+    function ForgotPasswordComponent() {
     }
-    FooterComponent = __decorate([
+    ForgotPasswordComponent = __decorate([
         core_1.Component({
-            selector: 'footer',
-            templateUrl: '../app/components/footer/footer.component.html',
-            styleUrls: ['../app/components/footer/footer.component.scss']
+            selector: 'forgot-password',
+            templateUrl: '../app/components/forgot-password/forgot-password.component.html',
+            styleUrls: ['../app/components/forgot-password/forgot-password.component.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], FooterComponent);
-    return FooterComponent;
+    ], ForgotPasswordComponent);
+    return ForgotPasswordComponent;
 }());
-exports.FooterComponent = FooterComponent;
-//# sourceMappingURL=footer.component.js.map
+exports.ForgotPasswordComponent = ForgotPasswordComponent;
+//# sourceMappingURL=forgot-password.component.js.map

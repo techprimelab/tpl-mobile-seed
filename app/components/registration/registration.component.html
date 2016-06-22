@@ -1,58 +1,54 @@
-
-
-<div>
-    <form [ngFormModel]="userForm" (submit)="onSubmit(items)">
-
-        <label>FirstName</label>
-        <input type="text" [(ngModel)]="items.firstName" ngControl="firstname" placeholder="FirstName"><br>
-
-        <div *ngIf="!firstname.valid">
-            <p>
-                please enter name
-            </p>
+<div class ="col-xs-12" >
+    <form role="form" [ngFormModel]="userForm" (submit)="onSubmit(items)" id="registrationForm">
+        <div class="form-group">
+            <label>FirstName</label>
+            <input type="text" [(ngModel)]="items.firstName" ngControl="firstname" placeholder="FirstName" class="form-control-input" required>
+            <!--<div *ngIf="!firstname.valid" class="form-error-message">
+                <p>please enter First name.</p>
+            </div>-->
         </div>
 
-        <label>LastName</label>
-        <input type="text" [(ngModel)]="items.lastName" ngControl="lastname"  placeholder="LastName" required><br>
-        <div *ngIf="!lastname.valid">
-            <p>
-                please enter lastname
-            </p>
+        <div class="form-group">
+            <label>LastName</label>
+            <input type="text" [(ngModel)]="items.lastName" ngControl="lastname"  placeholder="LastName"  class="form-control-input" required>
+            <!--<div *ngIf="!lastname.valid" class="form-error-message">
+                <p>please enter Last name.</p>
+            </div>-->
         </div>
 
-        <label>Email</label>
-        <input type="text" [(ngModel)]="items._Email" ngControl="email" placeholder="Mobile number or email add" required><br>
-        <div *ngIf="!email.valid">
-            <p>
-                please enter email
-            </p>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" [(ngModel)]="items._Email" ngControl="email" placeholder="Mobile number or email add" class="form-control-input" >
+            <!--<div *ngIf="!email.valid" class="form-error-message">
+                <p>please enter Email</p>
+            </div>-->
         </div>
 
-        <label>Re-enter Email</label>
-        <input type="text" [(ngModel)]="items.conformEmail" ngControl="conformemail" placeholder="Re-enter member or email add" required><br>
-        <div *ngIf="!conformemail.valid">
-            <p>
-                please Conform email
-            </p>
+        <div class="form-group">
+            <label>Re-enter Email</label>
+            <input type="email" [(ngModel)]="items.conformEmail" ngControl="conformemail" placeholder="Re-enter member or email add" class="form-control-input" required>
+            <!--<div *ngIf="!conformemail.valid" class="form-error-message">
+                <p>please enter Confirm email</p>
+            </div>-->
         </div>
 
-        <label>Mobilenumber</label>
-        <input type="text" [(ngModel)]="items.mobileNumber" ngControl="mobilenumber" placeholder="Mobilenumber" required><br>
-        <div *ngIf="!mobilenumber.valid">
-            <p>
-                please enter mobilenumber
-            </p>
+        <div class="form-group">
+            <label>Mobilenumber</label>
+            <input type="text" [(ngModel)]="items.mobileNumber" ngControl="mobilenumber" placeholder="Mobilenumber" class="form-control-input" required>
+            <!--<div *ngIf="!mobilenumber.valid" class="form-error-message">
+                <p>please enter Mobile number</p>
+            </div>-->
         </div>
 
-        <label>Password</label>
-        <input type="password" [(ngModel)]="items.userPassword"  ngControl="password" placeholder="New Password" required><br>
-        <div *ngIf="!password.valid">
-            <p>
-                please enter password
-            </p>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" [(ngModel)]="items.userPassword"  ngControl="password" placeholder="New Password" class="form-control-input" required>
+            <!--<div *ngIf="!password.valid" class="form-error-message">
+                <p>please enter Password</p>
+            </div>-->
         </div>
 
-        <button type="submit" [disabled]="!userForm.valid">Create an account</button>
+        <button type="submit" class="btn btn-primary btn-block" [disabled]="!userForm.valid">Create an account</button>
 
     </form>
 </div>

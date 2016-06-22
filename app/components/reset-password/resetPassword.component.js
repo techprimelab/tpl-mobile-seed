@@ -9,19 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var FooterComponent = (function () {
-    function FooterComponent() {
-        this.firstName = "Prajakta";
+var ResetPasswordComponent = (function () {
+    function ResetPasswordComponent() {
     }
-    FooterComponent = __decorate([
+    ResetPasswordComponent = __decorate([
         core_1.Component({
-            selector: 'footer',
-            templateUrl: '../app/components/footer/footer.component.html',
-            styleUrls: ['../app/components/footer/footer.component.scss']
+            selector: 'reset-password',
+            templateUrl: '../app/components/reset-password/reset-password.html',
+            styleUrls: ['../app/components/reset-password/reset-password.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], FooterComponent);
-    return FooterComponent;
+    ], ResetPasswordComponent);
+    return ResetPasswordComponent;
 }());
-exports.FooterComponent = FooterComponent;
-//# sourceMappingURL=footer.component.js.map
+exports.ResetPasswordComponent = ResetPasswordComponent;
+//# sourceMappingURL=resetPassword.component.js.map

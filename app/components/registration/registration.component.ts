@@ -6,12 +6,13 @@ import {RegistrationService} from "../shared/registration.service";
 import {RegistrationItem} from "../shared/registration-item";
 import {ControlGroup,Control,FormBuilder, Validators } from '@angular/common';
 import {Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
-//import {RegistrationValidation} from "../shared/registration-validation.service";
+import {CustomValidators} from '../registration/CustomValidators';
 
 @Component({
     selector: 'form-registration',
-    templateUrl: '/app/components/registration/registration.component.html',
-    providers: [RegistrationService]
+    templateUrl: '../app/components/registration/registration.component.html',
+    styleUrls: ['../app/components/registration/registration.component.scss'],
+    providers: [RegistrationService, ROUTER_DIRECTIVES]
 })
 
 export class Registration {
@@ -33,7 +34,8 @@ export class Registration {
             this.firstname = new Control('',Validators.required);
             this.lastname = new Control('',Validators.required);
             this.mobilenumber = new Control('',Validators.required);
-            this.email = new Control('',Validators.required);
+            this.email = new Control('',Validators.required,CustomValidators.emailValidator);
+            //this.email = new Control(['', Validators.compose([Validators.required, CustomValidators.emailValidator])]);
             this.conformemail = new Control('',Validators.required);
             this.password = new Control('',Validators.required);
 
