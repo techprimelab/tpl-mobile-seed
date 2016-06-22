@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="app/assets/css/styles.css">
   <!-- 1. Load libraries -->
   <!-- Polyfill(s) for older browsers -->
+  <!--<script>
+    System.import('app/main').catch(function (err) { console.error(err); });
+  </script>-->
   <script src="node_modules/core-js/client/shim.min.js"></script>
   <script src="node_modules/zone.js/dist/zone.js"></script>
   <script src="node_modules/reflect-metadata/Reflect.js"></script>
@@ -16,8 +19,10 @@
   <script>
     System.import('app').catch(function(err){ console.error(err); });
   </script>
+  <base href="/">
 </head>
 <!-- 3. Display the application -->
+
 <body>
 <my-app>Loading...</my-app>
 </body>
