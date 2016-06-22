@@ -1,6 +1,12 @@
 <div class="col-xs-12">
     <form role="form" id="loginForm">
-        <button type="submit" class="btn btn-primary btn-block" >Sign In with Facebook</button>
+        <div>
+            <button type="submit" (click)="withfacebook()" class="btn btn-primary btn-block">Sign with facebook</button>
+        </div>
+
+        <div>
+            <button type="submit" (click)="withgoogle()" class="btn btn-primary btn-block" >Sign with Google +</button>
+        </div>
         <div class="clearfix">&nbsp;</div>
         <div class="form-group">
             <label for="email">Email address:</label>
@@ -14,7 +20,7 @@
         </div>
         <div class="row">
             <div class="col-xs-6"><button type="submit" class="btn btn-primary btn-block" >Sign In</button></div>
-            <div class="col-xs-6"><button type="submit" class="btn btn-primary btn-block" >Sign Up</button></div>
+            <div class="col-xs-6"><button  type="submit" (click)="onSignUp()" class="btn btn-primary btn-block" >Sign Up</button></div>
         </div>
         <div class="text-center forgot-password">
             <a href="#">Forgot Your Password</a>

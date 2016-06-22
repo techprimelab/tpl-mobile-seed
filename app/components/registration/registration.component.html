@@ -1,13 +1,7 @@
-<div>
-    <button type="submit" (click)="withfacebook()">Sign with facebook</button>
-</div>
+
 
 <div>
-    <button type="submit" (click)="withgoogle()">Sign with Google +</button>
-</div>
-
-<div>
-    <form [ngFormModel]="userForm" (submit)="formdata(items)">
+    <form [ngFormModel]="userForm" (submit)="onSubmit(items)">
 
         <label>FirstName</label>
         <input type="text" [(ngModel)]="items.firstName" ngControl="firstname" placeholder="FirstName"><br>

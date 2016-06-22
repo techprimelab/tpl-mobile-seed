@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
+import {Routes,ROUTER_DIRECTIVES} from '@angular/router';
+import {loginComponent} from "./components/login/login.component";
 import {Registration} from "./components/registration/registration.component";
-import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
     selector: 'my-app',
-    template: `<div>
-     <a [routerLink]="['/registration']">register</a>
-      <main><router-outlet></router-outlet></main>
-     </div>`,
-    directives: [ROUTER_DIRECTIVES],
+    template: `<login></login><router-outlet></router-outlet><form-registration></form-registration>`,
+    directives: [ROUTER_DIRECTIVES,loginComponent]
 })
 
 @Routes([
 
-    {path: '/registration', component: Registration},
-
+    { path: '/login', component: loginComponent},
+    {path: '/registration', component: Registration}
 ])
+
 export class AppComponent {}

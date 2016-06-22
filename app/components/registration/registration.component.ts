@@ -47,7 +47,7 @@ export class Registration {
             });
         }
 
-    formdata(item) {
+    onSubmit(item) {
         console.log("register", this.items.firstName);
         this.userService.addNewRegistration(item)
             .subscribe(res => {
@@ -55,13 +55,6 @@ export class Registration {
             });
         console.log("register", this.items.firstName);
     }
-
-    withfacebook(){
-        console.log("withfacebookLogin");
-    }
-
-    withgoogle(){
-        console.log("withGoogleLogin");
-    }
+    
 
 }
