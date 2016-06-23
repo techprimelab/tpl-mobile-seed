@@ -1,21 +1,6 @@
 #registrationForm {
   margin-top: 20px;
 }
-#registrationForm .form-control-input{
-  border-radius: 4px;
-  color: #555;
-  display: block;
-  font-size: 14px;
-  height: 34px;
-  line-height: 1.42857;
-  padding: 6px 12px;
-  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-  width: 100%;
-}
-.form-error-message{
-  color:#f00;
-  position: absolute;
-}
 
 .ng-valid {
   border: 1px solid #42A948;
@@ -24,4 +9,8 @@
 .ng-invalid {
   border: 1px solid #a94442;
   box-shadow: none;
+}
+
+.back{
+  margin-bottom:20px;
 }

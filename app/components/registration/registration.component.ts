@@ -1,7 +1,4 @@
-/**
- * Created by Twinprimelabs on 20/06/16.
- */
-import {Component} from "@angular/core";
+import {Component} from '@angular/core';
 import {RegistrationService} from "../shared/registration.service";
 import {RegistrationItem} from "../shared/registration-item";
 import {ControlGroup, Control, FormBuilder, Validators} from "@angular/common";

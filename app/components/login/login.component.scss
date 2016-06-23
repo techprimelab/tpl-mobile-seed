@@ -1,8 +1,17 @@
-#loginForm {
-  margin-top: 80px;
+.signin{
+  margin-top:40px;
 }
 .forgot-password{
   border-top:1px solid #ccc;
-  margin:40px 0px 0px;
+  margin:20px 0px 0px;
   padding:20px 0px;
+}
+
+.ng-valid {
+  border: 1px solid #42A948;
+  box-shadow: none;
+}
+.ng-invalid {
+  border: 1px solid #a94442;
+  box-shadow: none;
 }
