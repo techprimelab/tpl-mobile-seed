@@ -9,16 +9,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require("@angular/router");
+var common_1 = require('@angular/common');
+var shared_service_1 = require("../shared/shared.service");
 var ForgotPasswordComponent = (function () {
-    function ForgotPasswordComponent() {
+    function ForgotPasswordComponent(formBuilder, _router, _login) {
+        this.formBuilder = formBuilder;
+        this._router = _router;
+        this._login = _login;
+        this.userName = "";
+        this.userNameCtrl = new common_1.Control('', common_1.Validators.required);
+        this.forgotPasswordFormCtrl = formBuilder.group({
+            userNameCtrl: this.userNameCtrl,
+        });
     }
+    ForgotPasswordComponent.prototype.onSubmit = function () {
+        this._login.userLogin({ userName: this.userName })
+            .subscribe(function (res) {
+            alert("call is made");
+        });
+    };
     ForgotPasswordComponent = __decorate([
         core_1.Component({
             selector: 'forgot-password',
+            directives: [router_1.ROUTER_DIRECTIVES],
             templateUrl: '../app/components/forgot-password/forgot-password.component.html',
-            styleUrls: ['../app/components/forgot-password/forgot-password.component.css']
+            styleUrls: ['../app/components/forgot-password/forgot-password.component.scss'],
+            providers: [shared_service_1.SharedService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [common_1.FormBuilder, router_1.Router, shared_service_1.SharedService])
     ], ForgotPasswordComponent);
     return ForgotPasswordComponent;
 }());

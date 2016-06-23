@@ -14,7 +14,7 @@
     <form role="form" [ngFormModel]="loginFormCtrl" (submit)="onSubmit(userName,password)" id="loginForm">
         <div class="form-group">
             <label for="email">Email address:</label>
-            <input type="email" [(ngModel)]="userName" ngControl="userNameCtrl" class="form-control" id="email"  required>
+            <input type="email" [(ngModel)]="userName" ngControl="userNameCtrl" class="form-control" id="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required >
             <!--<div *ngIf="!username.valid"><p>please enter username</p></div>-->
         </div>
         <div class="form-group">
@@ -31,8 +31,8 @@
                 <button (click)="onSignUp()" class="btn btn-primary btn-block">Sign Up</button>
             </div>
         </div>
-        <div class="text-center forgot-password">
-            <a href="#">Forgot Your Password</a>
-        </div>
     </form>
+    <div class="text-center forgot-password">
+        <a (click)="onforgotPassword()" >Forgot Your Password</a>
+    </div>
 </div>

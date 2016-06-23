@@ -29,10 +29,9 @@ export class RegistrationComponent {
 
         this.firstNameCtrl = new Control('', Validators.required);
         this.lastNameCtrl = new Control('', Validators.required);
-        this.mobileNumberCtrl = new Control('', Validators.required);
-        this.emailCtrl = new Control('', Validators.required, CustomValidators.emailValidator);
-        //this.emailCtrl = new Control(['', Validators.compose([Validators.required, CustomValidators.emailValidator])]);
+        this.emailCtrl = new Control('', Validators.required);
         this.conformEmailCtrl = new Control('', Validators.required);
+        this.mobileNumberCtrl =  new Control('',Validators.required);
         this.passwordCtrl = new Control('', Validators.required);
 
         this.userFormCtrl = formBuilder.group({
