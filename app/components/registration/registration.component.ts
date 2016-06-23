@@ -1,52 +1,52 @@
 /**
  * Created by Twinprimelabs on 20/06/16.
  */
-import {Component} from '@angular/core';
+import {Component} from "@angular/core";
 import {RegistrationService} from "../shared/registration.service";
 import {RegistrationItem} from "../shared/registration-item";
-import {ControlGroup,Control,FormBuilder, Validators } from '@angular/common';
-import {Router, ROUTER_DIRECTIVES} from '@angular/router';
-import {CustomValidators} from '../registration/CustomValidators';
+import {ControlGroup, Control, FormBuilder, Validators} from "@angular/common";
+import {ROUTER_DIRECTIVES} from "@angular/router";
+import {CustomValidators} from "../registration/CustomValidators";
 
 @Component({
     selector: 'form-registration',
-    directives:[ROUTER_DIRECTIVES],
+    directives: [ROUTER_DIRECTIVES],
     templateUrl: '../app/components/registration/registration.component.html',
     styleUrls: ['../app/components/registration/registration.component.scss'],
     providers: [RegistrationService, ROUTER_DIRECTIVES]
 })
 
-export class Registration {
+export class RegistrationComponent {
 
-    firstname:Control;
-    lastname:Control;
-    email:Control;
-    conformemail:Control;
-    password:Control;
-    mobilenumber:Control;
-    userForm: ControlGroup;
+    firstNameCtrl:Control;
+    lastNameCtrl:Control;
+    emailCtrl:Control;
+    conformEmailCtrl:Control;
+    passwordCtrl:Control;
+    mobileNumberCtrl:Control;
+    userFormCtrl:ControlGroup;
     items:RegistrationItem = new RegistrationItem();
 
-   
-        constructor(private formBuilder: FormBuilder,private userService:RegistrationService) {
 
-            this.firstname = new Control('',Validators.required);
-            this.lastname = new Control('',Validators.required);
-            this.mobilenumber = new Control('',Validators.required);
-            this.email = new Control('',Validators.required,CustomValidators.emailValidator);
-            //this.email = new Control(['', Validators.compose([Validators.required, CustomValidators.emailValidator])]);
-            this.conformemail = new Control('',Validators.required);
-            this.password = new Control('',Validators.required);
+    constructor(private formBuilder:FormBuilder, private userService:RegistrationService) {
 
-            this.userForm = formBuilder.group({
-                lastname: this.lastname,
-                firstname: this.firstname,
-                mobilenumber:this.mobilenumber,
-                email:this.email,
-                password:this.password,
-                conformemail:this.conformemail
-            });
-        }
+        this.firstNameCtrl = new Control('', Validators.required);
+        this.lastNameCtrl = new Control('', Validators.required);
+        this.mobileNumberCtrl = new Control('', Validators.required);
+        this.emailCtrl = new Control('', Validators.required, CustomValidators.emailValidator);
+        //this.emailCtrl = new Control(['', Validators.compose([Validators.required, CustomValidators.emailValidator])]);
+        this.conformEmailCtrl = new Control('', Validators.required);
+        this.passwordCtrl = new Control('', Validators.required);
+
+        this.userFormCtrl = formBuilder.group({
+            lastNameCtrl: this.lastNameCtrl,
+            firstNameCtrl: this.firstNameCtrl,
+            mobileNumberCtrl: this.mobileNumberCtrl,
+            emailCtrl: this.emailCtrl,
+            passwordCtrl: this.passwordCtrl,
+            conformEmailCtrl: this.conformEmailCtrl
+        });
+    }
 
     onSubmit(item) {
         console.log("register", this.items.firstName);

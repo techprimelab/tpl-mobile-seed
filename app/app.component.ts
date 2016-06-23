@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import {Routes,ROUTER_DIRECTIVES} from '@angular/router';
+import {Component} from '@angular/core';
+import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 import {LoginComponent} from "./components/login/login.component";
-import {Registration} from "./components/registration/registration.component";
+import {RegistrationComponent} from "./components/registration/registration.component";
 
 @Component({
     selector: 'my-app',
@@ -16,7 +16,7 @@ import {Registration} from "./components/registration/registration.component";
 @Routes([
     {path: '/', component: LoginComponent},
     {path: '/login', component: LoginComponent},
-    {path: '/registration', component: Registration}
+    {path: '/registration', component: RegistrationComponent},
 ])
 
 export class AppComponent {

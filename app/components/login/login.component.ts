@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Router, Routes} from '@angular/router';
+import {Router,ROUTER_DIRECTIVES} from '@angular/router';
 import {ControlGroup, Control, FormBuilder, Validators} from '@angular/common';
 import {SharedService} from "../shared/shared.service";
 
@@ -7,42 +7,42 @@ import {SharedService} from "../shared/shared.service";
     selector: 'login',
     providers: [SharedService],
     templateUrl: '../app/components/login/login.component.html',
-    styleUrls: ['../app/components/login/login.component.scss']
+    styleUrls: ['../app/components/login/login.component.scss'],
+    directives: [ROUTER_DIRECTIVES]
 })
 
 export class LoginComponent {
 
     userName:String = "";
     password:String = "";
-    username:Control;
-    userpassword:Control;
-    loginForm:ControlGroup;
+    userNameCtrl:Control;
+    userPasswordCtrl:Control;
+    loginFormCtrl:ControlGroup;
 
     constructor(private formBuilder:FormBuilder, private _router:Router, private _login:SharedService) {
 
-        this.username = new Control('', Validators.required);
-        this.userpassword = new Control('', Validators.required);
+        this.userNameCtrl = new Control('', Validators.required);
+        this.userPasswordCtrl = new Control('', Validators.required);
 
-        this.loginForm = formBuilder.group({
-            username: this.username,
-            userpassword: this.userpassword,
+        this.loginFormCtrl = formBuilder.group({
+            userNameCtrl: this.userNameCtrl,
+            userPasswordCtrl: this.userPasswordCtrl,
         });
     }
 
-    onLoginSubmit() {
+    onSubmit() {
         this._login.userLogin({userName: this.userName, password: this.password})
             .subscribe(res => {
                 alert("call is made");
-                //this._router.navigate(['/registration']);
             })
     }
-    
-    withfacebook() {
-        console.log("withfacebookLogin");
+
+    loginWithFacebook() {
+        console.log("implement task to login with facebook");
     }
 
-    withgoogle() {
-        console.log("withGoogleLogin");
+    loginWithGoogle() {
+        console.log("implement task to login with google");
     }
 
     onSignUp() {
