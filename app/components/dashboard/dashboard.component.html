@@ -1,5 +1,5 @@
 <!-- #wrapper -->
-<div id="wrapper" class="active">
+<div id="wrapper"[class.active]="isClassVisible">
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
         <nav id="spy">
@@ -8,16 +8,13 @@
                     <a href="#home_page" data-scroll>Home</a>
                 </li>
                 <li>
-                    <a href="#about" data-scroll>About</a>
-                </li>
-                <li>
-                    <a href="#service" data-scroll>Services</a>
+                    <a href="#about" data-scroll>Profile</a>
                 </li>
                 <li>
                     <a href="#portfolio" data-scroll>Portfolio</a>
                 </li>
                 <li>
-                    <a href="#contact" data-scroll>Contact</a>
+                    <a href="#contact" data-scroll>Sign Out</a>
                 </li>
             </ul>
         </nav>
@@ -26,10 +23,10 @@
     <!-- Page content -->
     <div id="page-content-wrapper">
         <div class="content-header">
-            <a class="c-hamburger pull-left" id="menu-toggle" href="#" (click)="clicked($event)">
+            <a class="c-hamburger pull-left" id="menu-toggle" (click)="isClassVisible = !isClassVisible;">
                 <span>toggle menu</span>
             </a>
-            <a href="#home_page" class="header-brand">WEBSITE BRAND</a>
+            <a href="#home_page" class="header-brand" >WEBSITE BRAND</a>
         </div>
         <div class="container-fluid">
             <div class="row">
@@ -41,3 +38,4 @@
     </div>
 </div>
 <!-- /#wrapper -->
+
