@@ -2,8 +2,7 @@ import {Component} from '@angular/core';
 import {RegistrationService} from "../shared/registration.service";
 import {RegistrationItem} from "../shared/registration-item";
 import {ControlGroup, Control, FormBuilder, Validators} from "@angular/common";
-import {ROUTER_DIRECTIVES} from "@angular/router";
-import {CustomValidators} from "../registration/CustomValidators";
+import {Router,ROUTER_DIRECTIVES} from "@angular/router";
 
 @Component({
     selector: 'form-registration',
@@ -25,7 +24,7 @@ export class RegistrationComponent {
     items:RegistrationItem = new RegistrationItem();
 
 
-    constructor(private formBuilder:FormBuilder, private userService:RegistrationService) {
+    constructor(private formBuilder:FormBuilder, private userService:RegistrationService, private _router:Router) {
 
         this.firstNameCtrl = new Control('', Validators.required);
         this.lastNameCtrl = new Control('', Validators.required);
@@ -45,10 +44,12 @@ export class RegistrationComponent {
     }
 
     onSubmit(item) {
-        console.log("register", this.items.firstName);
+
+        this._router.navigate(['/']);
+        /*console.log("register", this.items.firstName);
         this.userService.addNewRegistration(item)
             .subscribe(res => {
                 console.log(JSON.stringify(res));
-            });
+            });*/
     }
 }

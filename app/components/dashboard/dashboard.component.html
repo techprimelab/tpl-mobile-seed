@@ -5,16 +5,16 @@
         <nav id="spy">
             <ul class="sidebar-nav nav">
                 <li><!-- class="sidebar-brand"-->
-                    <a href="#home_page" data-scroll>Home</a>
+                    <a data-scroll>Home</a>
                 </li>
                 <li>
-                    <a href="#about" data-scroll>Profile</a>
+                    <a  data-scroll>Profile</a>
                 </li>
                 <li>
-                    <a href="#portfolio" data-scroll>Portfolio</a>
+                    <a  data-scroll>Portfolio</a>
                 </li>
                 <li>
-                    <a href="#contact" data-scroll>Sign Out</a>
+                    <a [routerLink]="['/']">Sign Out</a>
                 </li>
             </ul>
         </nav>
@@ -26,7 +26,7 @@
             <a class="c-hamburger pull-left" id="menu-toggle" (click)="isClassVisible = !isClassVisible;">
                 <span>toggle menu</span>
             </a>
-            <a href="#home_page" class="header-brand" >WEBSITE BRAND</a>
+            <a  class="header-brand" >WEBSITE BRAND</a>
         </div>
         <div class="container-fluid">
             <div class="row">

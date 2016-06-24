@@ -24,9 +24,10 @@ export class ForgotPasswordComponent {
         });
     }
     onSubmit() {
-        this._login.userLogin({userName: this.userName})
+        /*this._login.userLogin({userName: this.userName})
             .subscribe(res => {
                 alert("call is made");
-            })
+            })*/
+        alert("Email has been sent");
     }
 }

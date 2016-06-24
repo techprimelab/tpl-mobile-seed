@@ -15,6 +15,7 @@ export class RegistrationService {
     }
 
     addNewRegistration(item) {
+
         console.log("service", item.firstName);
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');

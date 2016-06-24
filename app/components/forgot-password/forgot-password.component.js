@@ -24,10 +24,11 @@ var ForgotPasswordComponent = (function () {
         });
     }
     ForgotPasswordComponent.prototype.onSubmit = function () {
-        this._login.userLogin({ userName: this.userName })
-            .subscribe(function (res) {
-            alert("call is made");
-        });
+        /*this._login.userLogin({userName: this.userName})
+            .subscribe(res => {
+                alert("call is made");
+            })*/
+        alert("Email has been sent");
     };
     ForgotPasswordComponent = __decorate([
         core_1.Component({

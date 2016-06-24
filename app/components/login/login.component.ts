@@ -31,10 +31,11 @@ export class LoginComponent {
     }
 
     onSubmit() {
-        this._login.userLogin({userName: this.userName, password: this.password})
+        /*this._login.userLogin({userName: this.userName, password: this.password})
             .subscribe(res => {
                 alert("call is made");
-            })
+            })*/
+        this._router.navigate(['/dashboard']);
     }
 
     loginWithFacebook() {
