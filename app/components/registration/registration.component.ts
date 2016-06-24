@@ -44,7 +44,6 @@ export class RegistrationComponent {
     }
 
     onSubmit(item) {
-
         this._router.navigate(['/']);
         /*console.log("register", this.items.firstName);
         this.userService.addNewRegistration(item)

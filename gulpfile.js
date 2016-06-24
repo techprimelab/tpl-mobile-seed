@@ -10,7 +10,7 @@ var sass = require('gulp-sass');
 gulp.task("default", ["style", "watch"]);
 
 gulp.task('style', function () {
-    gulp.src('app/assets/css/**/*.scss')
+    gulp.src('app/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('app/assets/css/'));
 });

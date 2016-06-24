@@ -1,7 +1,4 @@
 ///<reference path="../../../node_modules/rxjs/add/operator/catch.d.ts"/>
-/**
- * Created by Twinprimelabs on 22/06/16.
- */
 import {Injectable} from '@angular/core';
 import {Http, Headers, Response} from '@angular/http';
 import "rxjs/add/operator/map";

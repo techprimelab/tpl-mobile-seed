@@ -1,6 +1,3 @@
-/**
- * Created by Twinprimelabs on 20/06/16.
- */
 export class RegistrationItem {
 
     firstName:string;
